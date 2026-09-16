@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《遮天》序章「九龙拉棺」 · 电影分镜设计稿</title>
+<style>
+  :root{
+    --paper:#f3efe6; --card:#fdfcf7; --ink:#23262b; --dim:#7c7668;
+    --line:#ddd5c2; --red:#2e2a24; --red-soft:#6f6a5e;
+    --bronze:#4a463e; --gold:#cfc8b8;
+    --board:#14161a; --board-deep:#0c0e11; --chalk:#d9d3c3; --chalk-dim:#8f8a7c;
+    --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+    --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --mono:"SF Mono",Consolas,"Courier New",monospace;
+    --hand:"Kaiti SC","STKaiti","KaiTi",cursive;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;
+       background-image:radial-gradient(#e4ddca 1px,transparent 1px);background-size:26px 26px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px 80px}
+
+  /* ---------- 顶部导航 ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(243,239,230,.92);backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);padding:10px 0}
+  nav .wrap{padding-bottom:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:4px 12px;border:1px solid var(--line);
+        border-radius:99px;transition:.2s;font-family:var(--mono)}
+  nav a:hover{color:var(--red);border-color:var(--red)}
+  nav .spacer{flex:1}
+  nav button{font-family:var(--mono);font-size:12.5px;padding:4px 14px;border-radius:99px;cursor:pointer;
+             border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:.2s}
+  nav button.ghost{background:transparent;color:var(--ink)}
+  nav button:hover{transform:translateY(-1px)}
+
+  /* ---------- 拍板 / 场记板 ---------- */
+  header{margin:42px 0 10px}
+  .clap{height:26px;border-radius:6px 6px 0 0;
+        background:repeating-linear-gradient(-48deg,#14161a 0 34px,#e8e2d2 34px 68px)}
+  .slate{background:var(--board);color:var(--chalk);border-radius:0 0 10px 10px;padding:30px 36px 26px;
+         box-shadow:0 18px 50px -18px rgba(20,22,26,.45)}
+  .slate .kicker{font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--chalk-dim)}
+  .slate h1{font-family:var(--serif);font-size:42px;letter-spacing:6px;color:#f2ecdc;margin:6px 0 2px}
+  .slate h1 em{font-style:normal;color:var(--gold)}
+  .slate .sub{font-family:var(--serif);font-size:16px;color:var(--chalk-dim);letter-spacing:3px}
+  .slate .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+               background:#2c3037;border:1px solid #2c3037;margin-top:22px}
+  .slate .grid div{background:var(--board);padding:10px 14px}
+  .slate .grid b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--chalk-dim);font-weight:normal}
+  .slate .grid span{font-size:14px;color:#ece5d3;font-family:var(--mono)}
+
+  /* ---------- 章节标题 ---------- */
+  section{margin-top:64px}
+  .sec-title{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px}
+  .sec-title .no{font-family:var(--mono);font-size:13px;color:var(--red);letter-spacing:2px}
+  .sec-title h2{font-family:var(--serif);font-size:26px;letter-spacing:3px}
+  .sec-title .en{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:2px}
+
+  .logline{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);
+           padding:22px 26px;border-radius:0 8px 8px 0;font-family:var(--serif)}
+  .logline q{font-size:17px;letter-spacing:1px;quotes:"「" "」"}
+  .logline p{font-size:14px;color:var(--dim);margin-top:10px;font-family:var(--sans)}
+
+  /* ---------- 分镜总表 ---------- */
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px;
+        box-shadow:0 6px 24px -14px rgba(35,38,43,.25)}
+  caption{text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--dim);padding:0 0 10px 2px}
+  th{background:var(--board);color:var(--chalk);font-family:var(--mono);font-weight:normal;
+     letter-spacing:1px;font-size:12px;padding:9px 10px;text-align:left;white-space:nowrap}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tbody tr{transition:.15s}
+  tbody tr:hover{background:#f6f1e3}
+  td.num{font-family:var(--mono);color:var(--red);font-weight:bold;font-size:14px}
+  td.t{font-family:var(--mono);white-space:nowrap;color:var(--dim);font-size:12px}
+  td b.tag{display:inline-block;font-family:var(--mono);font-size:11px;border:1px solid var(--ink);
+           border-radius:3px;padding:0 6px;margin-right:4px;white-space:nowrap}
+  tr.total td{font-family:var(--mono);background:#efe9d8;font-size:12.5px;letter-spacing:1px}
+
+  /* ---------- 情绪曲线 ---------- */
+  .curve-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px 26px 12px}
+  .curve-card h3{font-family:var(--serif);font-size:17px;letter-spacing:2px;margin-bottom:4px}
+  .curve-card .hint{font-size:12px;color:var(--dim);font-family:var(--mono)}
+
+  /* ---------- 场景头 ---------- */
+  .scene-head{background:var(--board);color:var(--chalk);border-radius:8px;padding:18px 26px;
+              display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+  .scene-head .sc{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold)}
+  .scene-head h3{font-family:var(--serif);font-size:22px;letter-spacing:4px;color:#f2ecdc}
+  .scene-head .meta{font-family:var(--mono);font-size:12px;color:var(--chalk-dim)}
+  .scene-head .palette{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .scene-head .palette i{display:block;width:26px;height:26px;border-radius:5px;border:1px solid #3a3f46}
+  .scene-head .palette em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--chalk-dim);letter-spacing:1px}
+
+  /* ---------- 分镜卡 ---------- */
+  .shot{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:38px;
+        overflow:hidden;box-shadow:0 10px 34px -20px rgba(35,38,43,.35)}
+  .shot-head{display:flex;align-items:center;gap:16px;padding:14px 24px;border-bottom:1px solid var(--line);
+             background:linear-gradient(90deg,#f8f4e8,var(--card))}
+  .shot-head .num{font-family:var(--mono);font-size:30px;font-weight:bold;color:var(--red);line-height:1;min-width:52px}
+  .shot-head .num small{display:block;font-size:9px;color:var(--dim);letter-spacing:2px;font-weight:normal}
+  .shot-head h4{font-family:var(--serif);font-size:19px;letter-spacing:2px}
+  .shot-head .chips{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:var(--mono);font-size:11px;padding:3px 10px;border-radius:99px;
+        border:1px solid var(--ink);white-space:nowrap}
+  .chip.dark{background:var(--board);color:var(--chalk);border-color:var(--board)}
+  .chip.red{border-color:var(--red);color:var(--red)}
+  .shot-body{display:grid;grid-template-columns:1.55fr 1fr}
+  figure.frame{padding:20px 0 20px 24px;cursor:zoom-in}
+  figure.frame svg{width:100%;height:auto;display:block;border-radius:6px;
+                   box-shadow:0 8px 26px -12px rgba(80,70,50,.4);transition:.25s}
+  figure.frame:hover svg{transform:scale(1.012)}
+  figcaption{font-size:13.5px;color:#4a4d53;padding:12px 6px 0 2px;line-height:1.8}
+  figcaption b{font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:2px;font-weight:normal}
+  aside.meta{border-left:1px dashed var(--line);padding:20px 24px;display:flex;flex-direction:column;gap:0}
+  aside.meta .row{padding:8px 0;border-bottom:1px dotted var(--line);font-size:13px;display:flex;gap:10px}
+  aside.meta .row:last-of-type{border-bottom:none}
+  aside.meta .k{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:2px;min-width:56px;padding-top:2px;flex:none}
+  aside.meta .note{margin-top:auto;background:#faf3e2;border:1px solid #e7d9ae;border-radius:8px;padding:12px 14px;
+                   font-family:var(--hand);font-size:15px;color:var(--red);line-height:1.7}
+  aside.meta .note::before{content:"构图批注 · COMPOSITION";display:block;font-family:var(--mono);font-size:9px;
+                           letter-spacing:2px;color:#8a8378;margin-bottom:4px}
+  .radar{border-top:1px dotted var(--line);margin-top:10px;padding-top:12px}
+  .radar .rlabel{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:8px}
+  .radar svg{width:100%;height:auto;display:block;border-radius:6px}
+
+  /* SVG 画面通用：手绘铅笔稿 */
+  .board{filter:url(#rough);border:1px solid #d8cfba}
+  .g-card svg{filter:url(#rough)}
+  .board text{user-select:none}
+  .guides{opacity:0;transition:opacity .35s}
+  body.show-guides .guides{opacity:1}
+  figure.frame:hover .guides{opacity:1}
+  #lb .guides{opacity:1!important}
+
+  /* ---------- 灯箱 ---------- */
+  #lb{position:fixed;inset:0;background:rgba(12,14,17,.9);z-index:99;display:flex;align-items:center;
+      justify-content:center;padding:4vw;opacity:0;pointer-events:none;transition:.25s;cursor:zoom-out}
+  #lb.on{opacity:1;pointer-events:auto}
+  #lb svg{max-width:min(1200px,94vw);max-height:88vh;border-radius:8px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+
+  /* ---------- 构图语言 ---------- */
+  .grammar{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .g-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;transition:.2s}
+  .g-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px -16px rgba(35,38,43,.35)}
+  .g-card svg{width:100%;height:66px;display:block;background:var(--board);border-radius:6px;margin-bottom:12px}
+  .g-card h5{font-family:var(--serif);font-size:15.5px;letter-spacing:1px;margin-bottom:6px}
+  .g-card h5 span{font-family:var(--mono);font-size:10px;color:var(--red);margin-right:6px}
+  .g-card p{font-size:12.5px;color:var(--dim);line-height:1.7}
+
+  footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;
+         font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:1px;flex-wrap:wrap;gap:8px}
+
+  @media(max-width:880px){
+    .shot-body{grid-template-columns:1fr}
+    aside.meta{border-left:none;border-top:1px dashed var(--line)}
+    figure.frame{padding:16px 16px 0}
+    .slate h1{font-size:30px}
+  }
+  @media print{
+    nav,#lb{display:none!important}
+    body{background:#fff}
+    .shot{break-inside:avoid;box-shadow:none}
+    .guides{opacity:1}
+  }
+</style>
+</head>
+<body>
+
+<!-- 共享 SVG 组件库 -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="corners" stroke="#3a3f46" stroke-width="2" fill="none">
+      <path d="M14,36 L14,14 L36,14"/><path d="M764,14 L786,14 L786,36"/>
+      <path d="M786,414 L786,436 L764,436"/><path d="M36,436 L14,436 L14,414"/>
+    </g>
+    <g id="thirds" stroke="#6f6a5e" stroke-width="1" opacity=".4" stroke-dasharray="3 7">
+      <path d="M266.7,0 V450 M533.3,0 V450 M0,150 H800 M0,300 H800"/>
+    </g>
+    <g id="walker" fill="#4a463e" stroke="#4a463e" stroke-width="1.2">
+      <circle cx="0" cy="-27" r="6"/>
+      <path d="M0,-21 C-8,-9 -9,5 -6,19 L-10,34 M0,-21 C8,-9 9,5 6,19 L10,34 M-6,-13 L-15,3 M6,-13 L13,2"
+            fill="none" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g id="walkerB" fill="#4a463e" stroke="#4a463e" stroke-width="1.2">
+      <circle cx="2" cy="-27" r="6"/><path d="M7,-29 l5,3 l-5,3" fill="none"/>
+      <path d="M0,-21 C-8,-9 -9,5 -6,19 L-10,34 M0,-21 C8,-9 9,5 6,19 L10,34 M-6,-13 L-15,3 M6,-13 L14,-2"
+            fill="none" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g id="tiny" stroke="#4a463e" stroke-width="2" stroke-linecap="round" fill="none">
+      <circle cx="0" cy="-14" r="2.4" fill="#4a463e" stroke="none"/>
+      <path d="M0,-11 L0,-1 M0,-9 L-4,-3 M0,-9 L4,-3"/>
+    </g>
+    <g id="tinyUp" stroke="#4a463e" stroke-width="2" stroke-linecap="round" fill="none">
+      <circle cx="0" cy="-16" r="2.4" fill="#4a463e" stroke="none"/>
+      <path d="M0,-13 L0,-1 M0,-11 L-5,-17 M0,-11 L5,-17"/>
+    </g>
+    <g id="dhead" stroke="#4a463e" stroke-width="2.4" stroke-linecap="round" fill="#efe8d6">
+      <circle cx="0" cy="0" r="8"/>
+      <path d="M-5,-7 L-9,-15 M-2,-8 L-3,-17 M5,-7 L9,-15 M2,-8 L3,-17" fill="none"/>
+      <path d="M-6,6 L-10,14 M6,6 L10,14" fill="none" opacity=".6"/>
+    </g>
+    <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8a8272" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#8a8272" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#8a8272" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#8a8378" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#8a8378" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="4" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="paperNoise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.42 0 0 0 0 0.39 0 0 0 0 0.32 0 0 0 0.09 0"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="7" height="7" fill="#f2ecdd"/>
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#4a463e" stroke-width="1" opacity=".5"/>
+    </pattern>
+    <pattern id="hatchDense" width="4" height="4" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#f2ecdd"/>
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#4a463e" stroke-width="1.1" opacity=".7"/>
+    </pattern>
+  </defs>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a href="#overview">总览 / 总表</a>
+    <a href="#pace">情绪曲线</a>
+    <a href="#sc1">场景一 · 深空</a>
+    <a href="#sc2">场景二 · 岱顶</a>
+    <a href="#grammar">构图语言</a>
+    <span class="spacer"></span>
+    <button class="ghost" onclick="toggleGuides(this)">显示构图线</button>
+    <button onclick="window.print()">打印分镜</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ================= 拍板 ================= -->
+<header>
+  <div class="clap"></div>
+  <div class="slate">
+    <div class="kicker">STORYBOARD · 分镜头脚本 · 黑白铅笔 B&amp;W PENCIL</div>
+    <h1>《遮天》 <em>序章</em></h1>
+    <div class="sub">「 九 龙 拉 棺 」 —— 冰冷与黑暗并存的宇宙深处，九具龙尸拉着青铜古棺，亘古长存</div>
+    <div class="grid">
+      <div><b>片名 TITLE</b><span>遮天 · 序章</span></div>
+      <div><b>段落 SEQUENCE</b><span>SC-01 / SC-02</span></div>
+      <div><b>镜头数 SHOTS</b><span>10</span></div>
+      <div><b>画幅 ASPECT</b><span>16:9 (1.78:1)</span></div>
+      <div><b>帧率 FPS</b><span>25</span></div>
+      <div><b>总时长 RUNTIME</b><span>01'23"</span></div>
+      <div><b>版本 VERSION</b><span>v1.0</span></div>
+      <div><b>日期 DATE</b><span>2026-09-14</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 总览 ================= -->
+<section id="overview">
+  <div class="sec-title">
+    <span class="no">PART 01</span><h2>创作阐述 &amp; 分镜总表</h2><span class="en">OVERVIEW &amp; SHOT LIST</span>
+  </div>
+
+  <div class="logline">
+    <q>冰冷与黑暗并存的宇宙深处，九具庞大的龙尸拉着一口青铜古棺，亘古长存。</q>
+    <p>序章以「发现 → 人间 → 降临」三幕节奏展开：深空四镜建立「未知的恐惧」，泰山三镜铺陈「人间的温度」，
+       最后三镜让神话碾进现实。全段共 10 镜，总时长 1 分 23 秒。视觉策略：负空间制造压迫、引导线归一焦点、
+       前中后景三层叙事、全片仅两次色彩焦点（五色石 / 龙目金光）、一次破例构图（镜 09 正中瞳孔）。</p>
+  </div>
+
+  <div style="height:26px"></div>
+
+  <table>
+    <caption>SHOT LIST · 分镜头总表（25fps）</caption>
+    <thead>
+      <tr><th>镜号</th><th>画面</th><th>景别</th><th>机位 / 角度</th><th>运镜</th><th>时长</th><th>TC IN–OUT</th><th>声音要点</th><th>转场</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="num">01</td><td>深渊孤蓝</td><td><b class="tag">ELS</b>大远景</td><td>深空固定 · 微俯 5°</td><td>极缓推</td><td class="t">8s</td><td class="t">00:00:00:00–00:00:08:00</td><td>低频嗡鸣 · 无配乐</td><td>淡入（自黑）</td></tr>
+      <tr><td class="num">02</td><td>九龙横渡</td><td><b class="tag">ELS→LS</b></td><td>虚拟低机位 · 仰视 15°</td><td>横移 + 缓推</td><td class="t">10s</td><td class="t">00:00:08:00–00:00:18:00</td><td>青铜低吟 + 心跳 60bpm</td><td>叠化</td></tr>
+      <tr><td class="num">03</td><td>青铜之棺</td><td><b class="tag">MS→CU</b></td><td>平视 · 环绕 20°</td><td>推轨逼近</td><td class="t">6s</td><td class="t">00:00:18:00–00:00:24:00</td><td>铜锈剥落 · 压迫呼吸</td><td>切</td></tr>
+      <tr><td class="num">04</td><td>龙目微睁</td><td><b class="tag">ECU</b>大特写</td><td>微仰 · 手持呼吸感</td><td>固定（微晃）</td><td class="t">4s</td><td class="t">00:00:24:00–00:00:28:00</td><td>全静 1.5s → 龙吟单音</td><td>硬切</td></tr>
+      <tr><td class="num">05</td><td>岱宗晨晓</td><td><b class="tag">ELS</b>大远景</td><td>贴地低机位 0.3m</td><td>大摇臂缓升</td><td class="t">8s</td><td class="t">00:00:28:00–00:00:36:00</td><td>晨风 · 鸟鸣 · 岱庙远钟</td><td>黑场（声桥）</td></tr>
+      <tr><td class="num">06</td><td>同窗登山</td><td><b class="tag">MS</b>中景</td><td>眼平 · 斯坦尼康</td><td>手持跟拍 + 微摇</td><td class="t">12s</td><td class="t">00:00:36:00–00:00:48:00</td><td>全现场声 · 对白</td><td>切</td></tr>
+      <tr><td class="num">07</td><td>五色祭坛</td><td><b class="tag">FS</b>全景</td><td>中轴对称 · 固定</td><td>锁定长镜头</td><td class="t">8s</td><td class="t">00:00:48:00–00:00:56:00</td><td>风止 · 石缝共鸣</td><td>J-cut 低频先入</td></tr>
+      <tr><td class="num">08</td><td>天穹开裂</td><td><b class="tag">ELS</b>大远景</td><td>贴地仰拍 60°</td><td>缓摇上抬</td><td class="t">10s</td><td class="t">00:00:56:00–00:01:06:00</td><td>云裂 · 万钧低频 · 惊呼远置</td><td>硬切</td></tr>
+      <tr><td class="num">09</td><td>瞳中龙影</td><td><b class="tag">ECU</b>大特写</td><td>微距 · 眼平</td><td>固定</td><td class="t">5s</td><td class="t">00:01:06:00–00:01:11:00</td><td>心跳放大 · 环境声尽消</td><td>匹配剪辑（瞳孔遮罩）</td></tr>
+      <tr><td class="num">10</td><td>降临 · 无声</td><td><b class="tag">ELS</b>大远景</td><td>俯瞰 30° → 升镜</td><td>急拉 + 摇臂上升</td><td class="t">12s</td><td class="t">00:01:11:00–00:01:23:00</td><td>轰响 → 全无声留白 2s</td><td>淡出至黑</td></tr>
+      <tr class="total"><td colspan="5">合计 TOTAL · 10 镜 / 2 场景</td><td class="t">83s</td><td class="t">00:01:23:00</td><td colspan="2">——</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ================= 情绪曲线 ================= -->
+<section id="pace">
+  <div class="sec-title">
+    <span class="no">PART 02</span><h2>情绪张力曲线</h2><span class="en">EMOTIONAL PACING</span>
+  </div>
+  <div class="curve-card">
+    <h3>三幕节奏：发现 → 人间 → 降临</h3>
+    <div class="hint">横轴：镜号 01–10 ｜ 纵轴：张力值 0–10 ｜ 尾段虚线 = 声断留白 2 秒</div>
+    <svg viewBox="0 0 1160 250" style="width:100%;height:auto;margin-top:8px">
+      <g stroke="#ddd5c2" stroke-width="1">
+        <path d="M60,190 H1120 M60,30 V190"/>
+      </g>
+      <g font-family="Consolas,monospace" font-size="10" fill="#7c7668">
+        <text x="30" y="194">0</text><text x="30" y="114">5</text><text x="24" y="34">10</text>
+        <text x="90" y="210">01</text><text x="198" y="210">02</text><text x="306" y="210">03</text>
+        <text x="414" y="210">04</text><text x="522" y="210">05</text><text x="630" y="210">06</text>
+        <text x="738" y="210">07</text><text x="846" y="210">08</text><text x="954" y="210">09</text>
+        <text x="1062" y="210">10</text>
+      </g>
+      <path d="M60,110 H1120" stroke="#eee6d2" stroke-width="1" stroke-dasharray="2 6"/>
+      <path d="M90,158 L198,126 L306,94 L414,78 L522,142 L630,158 L738,126 L846,62 L954,46 L1062,30 L1062,190 L90,190 Z"
+            fill="#2e2a24" opacity=".07"/>
+      <path d="M90,158 L198,126 L306,94 L414,78 L522,142 L630,158 L738,126 L846,62 L954,46 L1062,30"
+            fill="none" stroke="#2e2a24" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <g fill="#2e2a24">
+        <circle cx="90" cy="158" r="4"/><circle cx="198" cy="126" r="4"/><circle cx="306" cy="94" r="4"/>
+        <circle cx="414" cy="78" r="4"/><circle cx="522" cy="142" r="4"/><circle cx="630" cy="158" r="4"/>
+        <circle cx="738" cy="126" r="4"/><circle cx="846" cy="62" r="4"/><circle cx="954" cy="46" r="4"/>
+        <circle cx="1062" cy="30" r="5" fill="none" stroke="#2e2a24" stroke-width="2"/>
+      </g>
+      <path d="M1062,30 L1108,190" stroke="#2e2a24" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <text x="1075" y="230" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#2e2a24">声断 · 留白 2s</text>
+      <g font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#7c7668">
+        <text x="200" y="240">第一幕 · 发现</text>
+        <text x="580" y="240">第二幕 · 人间</text>
+        <text x="900" y="240">第三幕 · 降临</text>
+      </g>
+      <g font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="13" fill="#8a8378">
+        <text x="400" y="60">龙目微睁 · 屏息</text>
+        <text x="560" y="180">生活流 · 刻意回落</text>
+        <text x="820" y="40">天裂</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ================= 场景一 ================= -->
+<section id="sc1">
+  <div class="sec-title">
+    <span class="no">PART 03</span><h2>分镜卡 · 场景一</h2><span class="en">SHOT CARDS · SC-01</span>
+  </div>
+
+  <div class="scene-head">
+    <span class="sc">SC-01</span>
+    <h3>深 空</h3>
+    <span class="meta">外 · 宇宙深处 ｜ 时间未知 ｜ 影调：冷蓝黑 + 青铜金点缀 ｜ 氛围：亘古 · 死寂 · 未知</span>
+    <div class="palette">
+      <i style="background:#2a2d33"></i><i style="background:#55504a"></i>
+      <i style="background:#8a8378"></i><i style="background:#c5bfb0"></i>
+      <em>PALETTE</em>
+    </div>
+  </div>
+
+  <!-- 镜 01 -->
+  <article class="shot" id="s01">
+    <div class="shot-head">
+      <span class="num">01<small>SHOT</small></span>
+      <h4>「深渊孤蓝」</h4>
+      <div class="chips">
+        <span class="chip dark">ELS 大远景</span><span class="chip">8s</span>
+        <span class="chip">TC 00:00:00:00</span><span class="chip red">淡入</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜01 深渊孤蓝">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <g fill="#4a463e">
+            <circle cx="60" cy="40" r="1.2" opacity=".5"/><circle cx="140" cy="90" r="1" opacity=".3"/>
+            <circle cx="240" cy="50" r="1.5" opacity=".6"/><circle cx="320" cy="120" r="1" opacity=".35"/>
+            <circle cx="430" cy="60" r="1.3" opacity=".5"/><circle cx="520" cy="100" r="1" opacity=".3"/>
+            <circle cx="610" cy="40" r="1.6" opacity=".65"/><circle cx="700" cy="90" r="1.1" opacity=".4"/>
+            <circle cx="760" cy="50" r="1.2" opacity=".45"/><circle cx="90" cy="200" r="1" opacity=".3"/>
+            <circle cx="60" cy="300" r="1.4" opacity=".5"/><circle cx="160" cy="380" r="1" opacity=".3"/>
+            <circle cx="260" cy="330" r="1.2" opacity=".4"/><circle cx="360" cy="400" r="1.5" opacity=".55"/>
+            <circle cx="470" cy="360" r="1" opacity=".3"/><circle cx="560" cy="300" r="1.3" opacity=".45"/>
+            <circle cx="640" cy="380" r="1.1" opacity=".4"/><circle cx="730" cy="330" r="1.4" opacity=".5"/>
+            <circle cx="700" cy="200" r="1" opacity=".3"/><circle cx="560" cy="180" r="1.2" opacity=".35"/>
+            <circle cx="420" cy="200" r="1" opacity=".25"/><circle cx="300" cy="240" r="1.4" opacity=".4"/>
+            <circle cx="750" cy="410" r="1.2" opacity=".45"/><circle cx="40" cy="120" r="1" opacity=".35"/>
+            <circle cx="680" cy="150" r="1.3" opacity=".4"/><circle cx="360" cy="80" r="1" opacity=".3"/>
+            <circle cx="480" cy="420" r="1.4" opacity=".5"/><circle cx="200" cy="420" r="1" opacity=".3"/>
+            <circle cx="620" cy="240" r="1.1" opacity=".3"/>
+          </g>
+          <circle cx="185" cy="128" r="11" fill="#b8b2a4" stroke="#4a463e" stroke-width="1.2"/>
+          <path d="M185,117 A11,11 0 0 1 185,139 A14,14 0 0 0 185,117 Z" fill="#4a463e" opacity=".25"/>
+          <path d="M178,124 q4,-3 8,-1 M180,133 q5,-2 9,0" stroke="#8a8378" stroke-width=".8" fill="none" opacity=".7"/>
+          <text x="160" y="160" font-family="Consolas,monospace" font-size="10" fill="#7a7362" letter-spacing="2">TERRA</text>
+          <path d="M640,350 C480,300 320,220 210,150" stroke="#6f6a5e" stroke-width="1.5" fill="none"
+                stroke-dasharray="6 6"/>
+          <path d="M210,150 l-10,2 M210,150 l-3,10" stroke="#6f6a5e" stroke-width="2" fill="none"/>
+          <text x="400" y="330" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">SLOW PUSH-IN · 8s</text>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <circle cx="185" cy="128" r="26" fill="none" stroke="#6f6a5e" stroke-width="1.5"/>
+            <text x="220" y="110" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#5a544a">焦点 &lt; 5%</text>
+            <text x="540" y="80" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#5a544a" opacity=".8">负空间 90%</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　冰冷与黑暗并存的宇宙深处，一颗蔚蓝的孤星悬于左上三分点。画面九成是虚无的黑，
+          只有地球反射着微弱日光。镜头以近乎静止的速度推近——孤独感先于叙事抵达。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>深空固定机位 · 微俯 5°</span></div>
+        <div class="row"><span class="k">运镜</span><span>极缓推（30s 行程压缩至 8s）</span></div>
+        <div class="row"><span class="k">声音</span><span>Sub-bass 低频嗡鸣持续；无配乐；偶有深空回响（类鲸鸣）</span></div>
+        <div class="row"><span class="k">转场</span><span>自黑淡入，首镜建立全片影调</span></div>
+        <div class="note">焦点不足画面的 5%。负空间不是「空」，是压迫本身。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 02 -->
+  <article class="shot" id="s02">
+    <div class="shot-head">
+      <span class="num">02<small>SHOT</small></span>
+      <h4>「九龙横渡」</h4>
+      <div class="chips">
+        <span class="chip dark">ELS → LS</span><span class="chip">10s</span>
+        <span class="chip">TC 00:00:08:00</span><span class="chip red">叠化</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜02 九龙横渡">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <g fill="#4a463e">
+            <circle cx="80" cy="60" r="1.2" opacity=".4"/><circle cx="200" cy="40" r="1" opacity=".3"/>
+            <circle cx="340" cy="70" r="1.3" opacity=".45"/><circle cx="520" cy="50" r="1" opacity=".3"/>
+            <circle cx="700" cy="80" r="1.4" opacity=".5"/><circle cx="760" cy="160" r="1" opacity=".3"/>
+            <circle cx="60" cy="180" r="1.2" opacity=".35"/><circle cx="740" cy="300" r="1.3" opacity=".4"/>
+            <circle cx="120" cy="400" r="1" opacity=".3"/><circle cx="300" cy="420" r="1.2" opacity=".35"/>
+            <circle cx="540" cy="400" r="1" opacity=".3"/><circle cx="700" cy="420" r="1.3" opacity=".4"/>
+            <circle cx="420" cy="40" r="1" opacity=".25"/><circle cx="640" cy="20" r="1.2" opacity=".35"/>
+          </g>
+          <g stroke="#4a463e" stroke-width="4" fill="none" stroke-linecap="round" opacity=".85">
+            <path d="M-10,70 C140,80 280,140 470,195"/>
+            <path d="M-10,130 C150,140 300,175 480,205"/>
+            <path d="M-10,190 C160,195 320,205 495,215"/>
+            <path d="M-10,250 C170,255 330,240 500,225"/>
+            <path d="M-10,320 C150,320 300,270 485,235"/>
+            <path d="M-10,380 C160,370 310,295 480,245"/>
+            <path d="M140,-10 C200,60 320,130 500,200"/>
+            <path d="M320,-10 C360,70 430,140 520,210"/>
+            <path d="M60,450 C180,380 340,300 495,240"/>
+          </g>
+          <g stroke="#4a463e" stroke-width="2.2" stroke-linecap="round" fill="#efe8d6">
+            <g transform="translate(470,195)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(480,205)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(495,215)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(500,225)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(485,235)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(480,245)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(500,200)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(520,210)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+            <g transform="translate(495,240)"><circle r="7"/><path d="M5,-3 l14,-8 M6,2 l15,2 M4,5 l12,8" fill="none"/></g>
+          </g>
+          <g stroke="#4a463e" stroke-width="1" opacity=".4">
+            <path d="M477,199 L575,218 M487,209 L575,220 M502,218 L575,222 M507,228 L575,224 M492,239 L575,226
+                     M487,249 L575,228 M507,204 L575,216 M527,214 L575,219 M502,244 L575,227"/>
+          </g>
+          <g stroke="#5a544a" fill="#5a544a">
+            <path d="M575,200 L640,190 L640,250 L575,260 Z" opacity=".22" stroke-width="2"/>
+            <path d="M575,200 L600,178 L665,168 L640,190" opacity=".22" stroke-width="2"/>
+            <path d="M640,190 L665,168 L665,228 L640,250" opacity=".16" stroke-width="2"/>
+            <circle cx="608" cy="224" r="6" fill="none" stroke-width="2"/>
+          </g>
+          <text x="588" y="286" font-family="Consolas,monospace" font-size="10" fill="#7a7362" letter-spacing="2">BRONZE COFFIN</text>
+          <path d="M120,430 L660,430" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <path d="M660,430 l-12,-5 M660,430 l-12,5" stroke="#6f6a5e" stroke-width="2"/>
+          <text x="280" y="424" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">TRUCKING → 横移缓推</text>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <g stroke="#6f6a5e" stroke-width="1" stroke-dasharray="4 6" opacity=".8">
+              <path d="M40,80 L608,222 M40,250 L608,222 M60,390 L608,222 M180,20 L608,222"/>
+            </g>
+            <circle cx="608" cy="222" r="30" fill="none" stroke="#6f6a5e" stroke-width="1.5"/>
+            <text x="430" y="120" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="16" fill="#5a544a">九线归一 · 焦点唯一</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　黑暗中，九具庞大的龙尸渐次浮现，呈梯队横渡深空。龙身覆满磨盘大的鳞甲，
+          在星光下泛着冷光；九道身躯如九条引导线，尽数指向队列尽头那口沉默的青铜古棺。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>虚拟低机位 · 仰视 15°（巨物感）</span></div>
+        <div class="row"><span class="k">运镜</span><span>横移 + 缓推，与龙队同向而行</span></div>
+        <div class="row"><span class="k">声音</span><span>青铜摩擦的金属低吟渐入；心跳 60bpm 垫底，随推近渐强</span></div>
+        <div class="row"><span class="k">转场</span><span>与镜 01 叠化：地球微光溶入龙队剪影</span></div>
+        <div class="note">九道龙身 = 九条引导线，全部归一于古棺；棺落右三分点。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 03 -->
+  <article class="shot" id="s03">
+    <div class="shot-head">
+      <span class="num">03<small>SHOT</small></span>
+      <h4>「青铜之棺」</h4>
+      <div class="chips">
+        <span class="chip dark">MS → CU</span><span class="chip">6s</span>
+        <span class="chip">TC 00:00:18:00</span><span class="chip red">切</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜03 青铜之棺">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <g stroke="#4a463e" stroke-width="1.5" opacity=".3">
+            <path d="M120,80 l30,-8 M260,60 l30,-8 M420,90 l30,-8 M600,60 l30,-8 M700,120 l30,-8
+                     M80,220 l30,-8 M660,260 l30,-8 M720,360 l30,-8 M180,400 l30,-8 M420,420 l30,-8 M600,380 l30,-8"/>
+          </g>
+          <g transform="rotate(-3 400 225)">
+            <g stroke="#5a544a" stroke-width="2.5" fill="#5a544a">
+              <path d="M190,160 L545,125 L580,295 L225,335 Z" opacity=".2"/>
+              <path d="M190,160 L215,132 L570,97 L545,125" opacity=".26"/>
+              <path d="M545,125 L570,97 L600,265 L580,295" opacity=".14"/>
+              <path d="M196,166 L551,131" fill="none" stroke-width="1.2" opacity=".7"/>
+            </g>
+            <g stroke="#7a7362" stroke-width="1.5" opacity=".65">
+              <path d="M250,200 l22,6 M290,240 l18,-4 M340,190 l24,8 M400,250 l20,-6 M460,180 l18,10
+                       M300,290 l26,4 M430,300 l20,-8 M500,230 l16,6 M240,250 l16,-8 M490,270 l22,4"/>
+            </g>
+            <g stroke="#5a544a" stroke-width="1.2" fill="none" opacity=".8">
+              <path d="M330,215 h40 v28 h-40 Z M338,221 h24 v16 h-24 Z"/>
+              <circle cx="585" cy="205" r="10"/>
+            </g>
+          </g>
+          <path d="M690,150 L630,300" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <path d="M630,300 l-2,12 M630,300 l10,6" stroke="#6f6a5e" stroke-width="2"/>
+          <text x="640" y="130" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">DOLLY-IN 缓推</text>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M266.7,120 V340" stroke="#6f6a5e" stroke-width="1.5"/>
+            <text x="560" y="360" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#5a544a">右 1/3 留「行进空间」</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　镜头逼近古棺。棺身斑驳，铜绿如锈血凝结，古老的刻纹在星光擦过时明灭一瞬。
+          它不属于任何已知的文明纪元，却安静得像在等待什么。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>平视 · 环绕 20°（展示棺体体积）</span></div>
+        <div class="row"><span class="k">运镜</span><span>推轨逼近，末段微顿</span></div>
+        <div class="row"><span class="k">声音</span><span>铜锈剥落的细响放大；逼近时加入压迫性呼吸声</span></div>
+        <div class="row"><span class="k">转场</span><span>硬切至龙首，制造「被注视」的惊悸</span></div>
+        <div class="note">棺体占左 2/3，右留行进空间；星光速度线强化方向感。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 04 -->
+  <article class="shot" id="s04">
+    <div class="shot-head">
+      <span class="num">04<small>SHOT</small></span>
+      <h4>「龙目微睁」</h4>
+      <div class="chips">
+        <span class="chip dark">ECU 大特写</span><span class="chip">4s</span>
+        <span class="chip">TC 00:00:24:00</span><span class="chip red">硬切</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜04 龙目微睁">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <path d="M120,270 C120,230 160,215 200,205 C230,120 300,80 380,95 C470,112 540,150 600,190 C680,235 740,300 790,400"
+                stroke="#4a463e" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M132,262 C142,232 168,220 202,210 C232,126 300,88 376,102 C460,118 528,154 586,192"
+                stroke="#8a8378" stroke-width="1.5" fill="none" opacity=".8"/>
+          <path d="M120,270 C220,290 320,285 400,270" stroke="#4a463e" stroke-width="2" fill="none" opacity=".7"/>
+          <path d="M375,98 C390,50 430,30 470,22 M415,55 C430,42 445,38 460,36" stroke="#4a463e" stroke-width="3"
+                fill="none" stroke-linecap="round"/>
+          <path d="M398,104 C415,62 450,46 485,40" stroke="#4a463e" stroke-width="2" fill="none" opacity=".5"/>
+          <path d="M300,185 Q345,158 390,182 Q345,206 300,185 Z" stroke="#4a463e" stroke-width="2.5" fill="#efe8d6"/>
+          <path d="M320,184 Q345,176 372,183" stroke="#4a463e" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="346" cy="182" r="2.5" fill="#6f6a5e"/>
+          <path d="M155,252 C120,300 100,350 105,410 M170,258 C150,320 150,370 170,420"
+                stroke="#4a463e" stroke-width="2" fill="none" opacity=".6"/>
+          <g stroke="#4a463e" stroke-width="1.5" fill="none" opacity=".45">
+            <path d="M560,260 a16,10 0 0 1 32,0 M600,275 a16,10 0 0 1 32,0 M640,290 a16,10 0 0 1 32,0
+                     M580,300 a16,10 0 0 1 32,0 M620,315 a16,10 0 0 1 32,0 M660,330 a16,10 0 0 1 32,0
+                     M600,340 a16,10 0 0 1 32,0 M640,355 a16,10 0 0 1 32,0 M680,370 a16,10 0 0 1 32,0"/>
+          </g>
+          <circle cx="150" cy="238" r="3" stroke="#4a463e" fill="none" opacity=".7"/>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M280,150 H420" stroke="#6f6a5e" stroke-width="1.5"/>
+            <circle cx="345" cy="182" r="34" fill="none" stroke="#6f6a5e" stroke-width="1.5"/>
+            <text x="430" y="120" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">眼压上三分线 · 静止即威胁</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　龙首大特写。巨目半睁，瞳孔深处掠过一点金光——是错觉，
+          还是亿万年后的第一次苏醒？须发凝止，时间在这里没有流动。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>微仰 · 手持呼吸感（微晃）</span></div>
+        <div class="row"><span class="k">运镜</span><span>固定，仅靠手持微晃维持「活感」</span></div>
+        <div class="row"><span class="k">声音</span><span>全静 1.5s → 一记极低频龙吟单音，直切黑场</span></div>
+        <div class="row"><span class="k">转场</span><span>硬切黑场，龙吟余韵作声桥接入人间</span></div>
+        <div class="note">全框式构图：龙首撑满银幕，「静止」成为最大的威胁。</div>
+      </aside>
+    </div>
+  </article>
+</section>
+
+<!-- ================= 场景二 ================= -->
+<section id="sc2">
+  <div class="sec-title">
+    <span class="no">PART 04</span><h2>分镜卡 · 场景二</h2><span class="en">SHOT CARDS · SC-02</span>
+  </div>
+
+  <div class="scene-head">
+    <span class="sc">SC-02</span>
+    <h3>岱 顶</h3>
+    <span class="meta">外 · 泰山之巅 ｜ 清晨 → 异变 ｜ 影调：晨金暖调 → 异变白光 ｜ 氛围：人间烟火 → 神迹碾压</span>
+    <div class="palette">
+      <i style="background:#c5bfb0"></i><i style="background:#a39c8c"></i>
+      <i style="background:#6b655a"></i><i style="background:#f2ecdd"></i>
+      <em>PALETTE</em>
+    </div>
+  </div>
+
+  <!-- 镜 05 -->
+  <article class="shot" id="s05">
+    <div class="shot-head">
+      <span class="num">05<small>SHOT</small></span>
+      <h4>「岱宗晨晓」</h4>
+      <div class="chips">
+        <span class="chip dark">ELS 大远景</span><span class="chip">8s</span>
+        <span class="chip">TC 00:00:28:00</span><span class="chip red">黑场 · 声桥</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜05 岱宗晨晓">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <path d="M165,300 A55,55 0 0 1 275,300" stroke="#4a463e" stroke-width="3" fill="#6f6a5e" fill-opacity=".14"/>
+          <g stroke="#4a463e" stroke-width="2" opacity=".7">
+            <path d="M220,232 v-14 M186,244 l-10,-10 M254,244 l10,-10 M172,268 h-14 M268,268 h14"/>
+          </g>
+          <path d="M0,300 L90,286 L180,296 L260,282 L340,294 L430,284 L520,296 L610,286 L700,295 L800,288 L800,306 L0,306 Z"
+                fill="#4a463e" opacity=".1"/>
+          <path d="M0,340 L120,318 L230,336 L350,314 L470,338 L590,318 L700,340 L800,322 L800,362 L0,362 Z"
+                fill="#4a463e" opacity=".17"/>
+          <g stroke="#4a463e" stroke-width="1.5" fill="none" opacity=".5">
+            <path d="M0,318 Q60,312 120,318 T240,318 T360,318 T480,318 T600,318 T720,318 T840,318"/>
+            <path d="M-20,334 Q50,328 120,334 T260,334 T400,334 T540,334 T680,334 T820,334"/>
+            <path d="M0,350 Q70,344 140,350 T280,350 T420,350 T560,350 T700,350 T840,350"/>
+          </g>
+          <path d="M0,450 L0,396 L140,372 L260,404 L380,380 L520,412 L650,388 L800,420 L800,450 Z"
+                fill="url(#hatch)" stroke="#4a463e" stroke-width="1.5"/>
+          <path d="M620,140 q8,-8 16,0 M660,120 q8,-8 16,0" stroke="#4a463e" stroke-width="1.5" fill="none" opacity=".6"/>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M0,300 H800" stroke="#6f6a5e" stroke-width="1.5"/>
+            <circle cx="220" cy="300" r="22" fill="none" stroke="#6f6a5e" stroke-width="1.5"/>
+            <text x="300" y="288" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#5a544a">地平线压下 1/3 · 远中近三层</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　黑场之后，人间。泰山之巅的清晨，云海翻涌，一轮红日跃出地平线。
+          三层山脊由远及近，天地间只有风声与远处岱庙的晨钟。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>贴地低机位 0.3m，仰承山势</span></div>
+        <div class="row"><span class="k">运镜</span><span>大摇臂缓升 8s：自云海升至日出</span></div>
+        <div class="row"><span class="k">声音</span><span>晨风、鸟鸣、岱庙远钟——自龙吟余韵中淡出（声桥）</span></div>
+        <div class="row"><span class="k">转场</span><span>黑场过渡，声画对位：从「死寂」到「人间」</span></div>
+        <div class="note">低机位让山脊成为天然引导线；远中近三层，各负其责。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 06 -->
+  <article class="shot" id="s06">
+    <div class="shot-head">
+      <span class="num">06<small>SHOT</small></span>
+      <h4>「同窗登山」</h4>
+      <div class="chips">
+        <span class="chip dark">MS 中景</span><span class="chip">12s</span>
+        <span class="chip">TC 00:00:36:00</span><span class="chip red">切</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜06 同窗登山">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <g transform="rotate(-3 400 225)">
+            <path d="M62,170 q10,-40 4,-70 M66,168 q30,-26 58,-30 M66,168 q-26,-30 -50,-34 M66,150 q22,-16 40,-18 M66,150 q-18,-18 -36,-20"
+                  stroke="#4a463e" stroke-width="2" fill="none" opacity=".5"/>
+            <g stroke="#4a463e" stroke-width="2.5" fill="none">
+              <path d="M20,450 L480,150"/>
+              <path d="M210,450 L640,205"/>
+            </g>
+            <g stroke="#4a463e" stroke-width="1.5" opacity=".7">
+              <path d="M89,405 L275,413 M158,360 L339,376 M227,315 L404,340 M296,270 L468,303 M365,225 L533,266 M434,180 L597,230"/>
+            </g>
+            <use href="#walker" transform="translate(150,378) scale(1.15)"/>
+            <use href="#walker" transform="translate(235,338) scale(1.0)"/>
+            <use href="#walkerB" transform="translate(320,302) scale(0.88)"/>
+            <use href="#walker" transform="translate(405,264) scale(0.75)"/>
+            <use href="#walker" transform="translate(488,224) scale(0.62)"/>
+            <path d="M560,450 L800,300 L800,450 Z" fill="url(#hatchDense)" stroke="#4a463e" stroke-width="2"/>
+            <g stroke="#4a463e" stroke-width="1.5" opacity=".6">
+              <path d="M600,450 L800,318 M650,450 L800,352 M700,450 L800,386"/>
+            </g>
+          </g>
+          <text x="600" y="60" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">手持 -3° · 跟拍</text>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M40,430 L620,160" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="5 7"/>
+            <text x="80" y="120" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#5a544a">石阶斜线起势 · 前景遮挡</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　叶凡与老同学一行沿石阶登山。手持镜头跟在人群身后，脚步、喘息与寒暄声交错。
+          前景石栏虚化掠过——生活的质感越真实，后续的撕裂越剧烈。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>眼平 · 斯坦尼康手持跟拍</span></div>
+        <div class="row"><span class="k">运镜</span><span>跟拍 + 微摇，保留呼吸感与现场晃动</span></div>
+        <div class="row"><span class="k">声音</span><span>全现场声：石阶脚步、喘息、同学寒暄（保留环境杂音）</span></div>
+        <div class="row"><span class="k">转场</span><span>切。本镜为全片唯一的「生活流」长镜</span></div>
+        <div class="radar">
+          <div class="rlabel">调度雷达 · BLOCKING MAP（俯视）</div>
+          <svg class="board radar-svg" viewBox="0 0 320 300" role="img" aria-label="镜06 调度雷达">
+            <rect width="320" height="300" fill="#f2ecdd"/><rect width="320" height="300" filter="url(#paperNoise)"/>
+            <text x="12" y="20" font-family="Consolas,monospace" font-size="9" fill="#7a7362" letter-spacing="1.5">TOP VIEW · SC-02 / SHOT 06</text>
+            <text x="12" y="33" font-family="Consolas,monospace" font-size="9" fill="#7a7362" letter-spacing="1.5">FOV 46° · 35MM · 眼平手持</text>
+            <g stroke="#8a8378" stroke-width="1" stroke-dasharray="3 5" fill="none">
+              <circle cx="160" cy="240" r="45"/><circle cx="160" cy="240" r="90"/><circle cx="160" cy="240" r="130"/>
+            </g>
+            <g font-family="Consolas,monospace" font-size="9" fill="#8a8378">
+              <text x="208" y="236">3m</text><text x="253" y="236">8m</text><text x="292" y="236">15m</text>
+            </g>
+            <path d="M160,240 L105,111 A140,140 0 0 0 215,111 Z" fill="#4a463e" opacity=".07" stroke="#4a463e" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M160,240 L160,100" stroke="#8a8378" stroke-width="1" stroke-dasharray="2 5"/>
+            <text x="14" y="58" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#5a544a">↑ 登顶方向（北）</text>
+            <g fill="#2e2a24">
+              <circle cx="150" cy="215" r="4.5"/><circle cx="172" cy="196" r="4.5"/><circle cx="145" cy="176" r="4.5"/>
+              <circle cx="168" cy="152" r="4.5"/><circle cx="152" cy="128" r="4.5"/>
+            </g>
+            <g font-family="Consolas,monospace" font-size="10" fill="#2e2a24">
+              <text x="138" y="212">A</text><text x="180" y="193">B</text><text x="133" y="173">C</text>
+              <text x="176" y="149">D</text><text x="160" y="125">E</text>
+            </g>
+            <path d="M160,282 L160,252" stroke="#2e2a24" stroke-width="1.5"/>
+            <path d="M160,252 l-4,7 M160,252 l4,7" stroke="#2e2a24" stroke-width="1.5" fill="none"/>
+            <text x="170" y="276" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#5a544a">跟拍移动</text>
+            <path d="M160,228 l-9,15 h18 Z" fill="#2e2a24"/>
+            <text x="160" y="296" text-anchor="middle" font-family="Consolas,monospace" font-size="9" fill="#7a7362">CAM · A=叶凡 B–E=同学</text>
+          </svg>
+        </div>
+        <div class="note">台阶斜线自左下起势；前景石栏遮挡制造「偷拍感」，人物渐次缩小即纵深。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 07 -->
+  <article class="shot" id="s07">
+    <div class="shot-head">
+      <span class="num">07<small>SHOT</small></span>
+      <h4>「五色祭坛」</h4>
+      <div class="chips">
+        <span class="chip dark">FS 全景</span><span class="chip">8s</span>
+        <span class="chip">TC 00:00:48:00</span><span class="chip red">J-cut</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜07 五色祭坛">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <path d="M60,120 q60,-18 120,0 M620,110 q60,-18 120,0" stroke="#4a463e" stroke-width="1.5" fill="none" opacity=".4"/>
+          <g stroke="#4a463e" fill="#4a463e">
+            <path d="M120,214 L146,214 L146,344 L120,344 Z M116,206 L150,206 L150,214 L116,214 Z" opacity=".2" stroke-width="2"/>
+            <path d="M654,214 L680,214 L680,344 L654,344 Z M650,206 L684,206 L684,214 L650,214 Z" opacity=".2" stroke-width="2"/>
+            <path d="M259,236 L281,236 L281,336 L259,336 Z M255,228 L285,228 L285,236 L255,236 Z" opacity=".2" stroke-width="2"/>
+            <path d="M519,236 L541,236 L541,336 L519,336 Z M515,228 L545,228 L545,236 L515,236 Z" opacity=".2" stroke-width="2"/>
+            <path d="M352,258 L368,258 L368,312 L352,312 Z M349,251 L371,251 L371,258 L349,258 Z" opacity=".2" stroke-width="2"/>
+            <path d="M432,258 L448,258 L448,312 L432,312 Z M429,251 L451,251 L451,258 L429,258 Z" opacity=".2" stroke-width="2"/>
+          </g>
+          <path d="M170,330 L630,330 L720,450 L80,450 Z" stroke="#4a463e" stroke-width="2.5" fill="#4a463e" fill-opacity=".06"/>
+          <path d="M146,362 L654,362 M122,398 L678,398" stroke="#4a463e" stroke-width="1.5" opacity=".7"/>
+          <path d="M370,292 L430,292 L430,330 L370,330 Z" stroke="#4a463e" stroke-width="2" fill="#4a463e" fill-opacity=".1"/>
+          <g stroke="#4a463e" stroke-width="1">
+            <circle cx="378" cy="286" r="6" fill="#8f8878"/>
+            <circle cx="392" cy="280" r="6" fill="#55504a"/>
+            <circle cx="406" cy="278" r="6" fill="#b0a894"/>
+            <circle cx="418" cy="281" r="6" fill="#e8e4d8"/>
+            <circle cx="428" cy="287" r="6" fill="#2a2d33" stroke="#4a463e"/>
+          </g>
+          <g stroke="#4a463e" stroke-width="1" opacity=".35">
+            <path d="M100,430 h80 M620,430 h90 M250,440 h120 M460,442 h100"/>
+          </g>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M400,0 V450" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="6 6"/>
+            <circle cx="400" cy="238" r="8" fill="none" stroke="#6f6a5e" stroke-width="1.5"/>
+            <text x="420" y="60" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">绝对中轴对称 = 仪式感</text>
+            <text x="440" y="270" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="13" fill="#6f6a5e">五色石 · 唯一色彩焦点</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　玉皇顶，五色祭坛。巨石阵以绝对对称的方式矗立，祭坛中央五色石静默如谜。
+          风忽然停了——锁定长镜头里，不安在静默中滋长。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>中轴对称 · 固定机位</span></div>
+        <div class="row"><span class="k">运镜</span><span>锁定长镜头 8s（一动不动即不安）</span></div>
+        <div class="row"><span class="k">声音</span><span>风声骤停；祭坛石缝低频共鸣；异变低频提前 1s 进入（J-cut）</span></div>
+        <div class="row"><span class="k">转场</span><span>声音先入：低频轰鸣先于画面抵达</span></div>
+        <div class="note">绝对对称 = 仪式感；五色石是全镜唯一色彩焦点，观众的视线无处可逃。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 08 -->
+  <article class="shot" id="s08">
+    <div class="shot-head">
+      <span class="num">08<small>SHOT</small></span>
+      <h4>「天穹开裂」</h4>
+      <div class="chips">
+        <span class="chip dark">ELS 大远景 · 仰拍</span><span class="chip">10s</span>
+        <span class="chip">TC 00:00:56:00</span><span class="chip red">硬切</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜08 天穹开裂">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <circle cx="400" cy="140" r="60" fill="url(#glow)"/>
+          <g stroke="#4a463e" fill="none" opacity=".5">
+            <circle cx="400" cy="140" r="42" stroke-width="1.5" stroke-dasharray="10 14"/>
+            <circle cx="400" cy="140" r="72" stroke-width="1.5" stroke-dasharray="16 20"/>
+            <circle cx="400" cy="140" r="106" stroke-width="1.2" stroke-dasharray="22 26" opacity=".7"/>
+            <circle cx="400" cy="140" r="140" stroke-width="1" stroke-dasharray="30 34" opacity=".5"/>
+            <circle cx="400" cy="140" r="170" stroke-width="1" stroke-dasharray="40 44" opacity=".3"/>
+          </g>
+          <path d="M392,128 L408,128 L408,142 L392,142 Z" stroke="#5a544a" stroke-width="2" fill="#5a544a" fill-opacity=".5"/>
+          <use href="#dhead" transform="translate(352,224) scale(0.9)"/>
+          <use href="#dhead" transform="translate(448,238) scale(0.75)"/>
+          <use href="#dhead" transform="translate(398,262) scale(0.6)"/>
+          <path d="M352,216 L376,160 M448,230 L424,160 M398,254 L400,170" stroke="#4a463e" stroke-width="1" opacity=".35"/>
+          <path d="M330,90 L250,40 M470,90 L560,36 M400,70 L400,10" stroke="#4a463e" stroke-width="1.5" opacity=".3"/>
+          <path d="M0,450 L0,410 L150,398 L300,408 L450,396 L600,406 L800,398 L800,450 Z" fill="url(#hatch)"/>
+          <path d="M0,410 L150,398 L300,408 L450,396 L600,406 L800,398" stroke="#4a463e" stroke-width="1.5" fill="none"/>
+          <use href="#tiny" transform="translate(180,402)"/>
+          <use href="#tinyUp" transform="translate(235,401)"/>
+          <use href="#tiny" transform="translate(290,405)"/>
+          <use href="#tinyUp" transform="translate(340,402)"/>
+          <use href="#tinyUp" transform="translate(400,399)"/>
+          <use href="#tiny" transform="translate(455,403)"/>
+          <use href="#tiny" transform="translate(520,401)"/>
+          <use href="#tinyUp" transform="translate(585,404)"/>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M0,360 H800" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="6 6"/>
+            <text x="20" y="352" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#5a544a">人界线 · 下 1/5</text>
+            <text x="520" y="90" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">天空占 4/5 · 人如蝼蚁</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　极低机位仰拍：天空像幕布一样被撕开，云层旋成巨大漩涡，九道龙影自漩涡中心垂首而下。
+          地面上的人影小如蝼蚁，仰望着神话碾进现实。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>贴地仰拍 60°（人物视角极限）</span></div>
+        <div class="row"><span class="k">运镜</span><span>缓摇上抬：自人群摇向天裂</span></div>
+        <div class="row"><span class="k">声音</span><span>云层撕裂声 + 万钧压迫低频；人群惊呼保持克制（远置）</span></div>
+        <div class="row"><span class="k">转场</span><span>硬切至瞳孔大特写，天裂的巨响瞬间抽空</span></div>
+        <div class="radar">
+          <div class="rlabel">调度雷达 · BLOCKING MAP（俯视）</div>
+          <svg class="board radar-svg" viewBox="0 0 320 300" role="img" aria-label="镜08 调度雷达">
+            <rect width="320" height="300" fill="#f2ecdd"/><rect width="320" height="300" filter="url(#paperNoise)"/>
+            <text x="12" y="20" font-family="Consolas,monospace" font-size="9" fill="#7a7362" letter-spacing="1.5">TOP VIEW · SC-02 / SHOT 08</text>
+            <text x="12" y="33" font-family="Consolas,monospace" font-size="9" fill="#7a7362" letter-spacing="1.5">FOV 74° · 24MM · 贴地仰拍 TILT +60°</text>
+            <g stroke="#8a8378" stroke-width="1" stroke-dasharray="3 5" fill="none">
+              <circle cx="160" cy="252" r="40"/><circle cx="160" cy="252" r="80"/><circle cx="160" cy="252" r="120"/>
+            </g>
+            <g font-family="Consolas,monospace" font-size="9" fill="#8a8378">
+              <text x="203" y="248">2m</text><text x="243" y="248">5m</text><text x="283" y="248">9m</text>
+            </g>
+            <path d="M160,252 L76,140 A140,140 0 0 0 244,140 Z" fill="#4a463e" opacity=".07" stroke="#4a463e" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="160" cy="86" r="24" fill="none" stroke="#5a544a" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <circle cx="160" cy="86" r="10" fill="none" stroke="#5a544a" stroke-width="1" stroke-dasharray="3 4"/>
+            <text x="160" y="52" text-anchor="middle" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#5a544a">天裂（画外上方）</text>
+            <path d="M96,168 L224,168" stroke="#2e2a24" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <text x="230" y="164" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="11" fill="#5a544a">山脊线</text>
+            <g fill="#2e2a24">
+              <circle cx="104" cy="168" r="4"/><circle cx="120" cy="168" r="4"/><circle cx="136" cy="168" r="4"/>
+              <circle cx="168" cy="168" r="4"/><circle cx="184" cy="168" r="4"/><circle cx="200" cy="168" r="4"/>
+              <circle cx="216" cy="168" r="4"/>
+            </g>
+            <circle cx="152" cy="168" r="5.5" fill="#2e2a24"/>
+            <circle cx="152" cy="168" r="9" fill="none" stroke="#2e2a24" stroke-width="1"/>
+            <text x="144" y="152" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#2e2a24">叶凡</text>
+            <text x="160" y="192" text-anchor="middle" font-family="Consolas,monospace" font-size="9" fill="#7a7362">人群 ×8 · 一字排开仰望</text>
+            <text x="178" y="238" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#5a544a">缓摇上抬（俯仰）</text>
+            <path d="M160,240 l-9,15 h18 Z" fill="#2e2a24"/>
+            <text x="160" y="296" text-anchor="middle" font-family="Consolas,monospace" font-size="9" fill="#7a7362">CAM · 24MM 广角 · 机高 0.2m</text>
+          </svg>
+        </div>
+        <div class="note">人影压在下 1/5，天空占 4/5——压迫感来自比例，而非特效。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 09 -->
+  <article class="shot" id="s09">
+    <div class="shot-head">
+      <span class="num">09<small>SHOT</small></span>
+      <h4>「瞳中龙影」</h4>
+      <div class="chips">
+        <span class="chip dark">ECU 大特写</span><span class="chip">5s</span>
+        <span class="chip">TC 00:01:06:00</span><span class="chip red">匹配剪辑</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜09 瞳中龙影">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <path d="M40,255 Q400,30 760,245" stroke="#4a463e" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M60,305 Q400,425 745,290" stroke="#4a463e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M70,225 Q400,60 730,215" stroke="#4a463e" stroke-width="1.2" fill="none" opacity=".4"/>
+          <g stroke="#4a463e" stroke-width="2" stroke-linecap="round">
+            <path d="M250,138 l-6,-16 M310,116 l-4,-18 M370,104 l-2,-18 M430,102 l2,-18 M490,110 l5,-17 M545,124 l8,-15"/>
+          </g>
+          <circle cx="400" cy="225" r="130" stroke="#4a463e" stroke-width="3" fill="#efe8d6"/>
+          <g stroke="#4a463e" stroke-width="1" opacity=".5">
+            <path d="M452,225 L520,225 M445,251 L504,285 M426,270 L460,329 M400,277 L400,345
+                     M374,270 L340,329 M355,251 L296,285 M348,225 L280,225 M355,199 L296,165
+                     M374,180 L340,121 M400,173 L400,105 M426,180 L460,121 M445,199 L504,165"/>
+          </g>
+          <circle cx="400" cy="225" r="48" fill="#05060a" stroke="#4a463e" stroke-width="1.5"/>
+          <path d="M388,214 L404,214 L404,232 L388,232 Z" stroke="#5a544a" stroke-width="2" fill="#5a544a" fill-opacity=".6"/>
+          <path d="M368,230 Q384,216 400,222" stroke="#4a463e" stroke-width="2" fill="none"/>
+          <circle cx="396" cy="219" r="3" fill="#6f6a5e"/>
+          <ellipse cx="350" cy="168" rx="15" ry="8" fill="#ffffff" opacity=".85" transform="rotate(-20 350 168)"/>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M400,60 V400 M230,225 H570" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="6 6"/>
+            <circle cx="400" cy="225" r="60" fill="none" stroke="#6f6a5e" stroke-width="1.5"/>
+            <text x="440" y="150" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">全片唯一 · 正中构图</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　全片唯一的大特写：叶凡的瞳孔。虹膜即银幕——龙影与古棺的倒影清晰地映在其中。
+          心跳声淹没了一切。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>微距 · 眼平，睫毛可见</span></div>
+        <div class="row"><span class="k">运镜</span><span>固定 5s，纹丝不动</span></div>
+        <div class="row"><span class="k">声音</span><span>心跳放大至主音轨，血液流动声；环境声全部抽离</span></div>
+        <div class="row"><span class="k">转场</span><span>匹配剪辑：瞳孔中的古棺放大遮罩，溶入下一镜全景</span></div>
+        <div class="note">正中构图——全片唯一一次打破三分法：规则破裂处，即高潮落点。</div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 镜 10 -->
+  <article class="shot" id="s10">
+    <div class="shot-head">
+      <span class="num">10<small>SHOT</small></span>
+      <h4>「降临 · 无声」</h4>
+      <div class="chips">
+        <span class="chip dark">ELS 大远景</span><span class="chip">12s</span>
+        <span class="chip">TC 00:01:11:00</span><span class="chip red">淡出至黑</span>
+      </div>
+    </div>
+    <div class="shot-body">
+      <figure class="frame" onclick="zoom(this)">
+        <svg class="board" viewBox="0 0 800 450" role="img" aria-label="镜10 降临无声">
+          <rect width="800" height="450" fill="#f2ecdd"/><rect width="800" height="450" filter="url(#paperNoise)"/>
+          <rect x="300" y="0" width="200" height="450" fill="url(#beamGrad)"/>
+          <rect x="372" y="0" width="56" height="450" fill="#8a8272" opacity=".22"/>
+          <g transform="rotate(8 400 135)">
+            <rect x="376" y="120" width="48" height="30" stroke="#5a544a" stroke-width="2.5" fill="#5a544a" fill-opacity=".55"/>
+          </g>
+          <g stroke="#4a463e" stroke-width="1.5" opacity=".5">
+            <path d="M384,104 v-22 M400,100 v-26 M416,106 v-20"/>
+          </g>
+          <path d="M330,450 L360,392 L440,392 L470,450 Z" fill="url(#hatchDense)" stroke="#4a463e" stroke-width="2"/>
+          <g stroke="#4a463e" fill="none">
+            <ellipse cx="400" cy="430" rx="110" ry="12" stroke-width="2" opacity=".7"/>
+            <ellipse cx="400" cy="430" rx="210" ry="22" stroke-width="1.5" opacity=".45"/>
+            <ellipse cx="400" cy="430" rx="320" ry="34" stroke-width="1" opacity=".25"/>
+          </g>
+          <g stroke="#4a463e" stroke-width="2" stroke-linecap="round" fill="none">
+            <g transform="translate(160,430) rotate(70)"><circle cx="0" cy="-14" r="2.4" fill="#4a463e" stroke="none"/><path d="M0,-11 L0,-1 M0,-9 L-4,-3 M0,-9 L4,-3"/></g>
+            <g transform="translate(255,440) rotate(-30)"><circle cx="0" cy="-14" r="2.4" fill="#4a463e" stroke="none"/><path d="M0,-11 L0,-1 M0,-9 L-4,-3 M0,-9 L4,-3"/></g>
+            <g transform="translate(305,424) rotate(15)"><circle cx="0" cy="-14" r="2.4" fill="#4a463e" stroke="none"/><path d="M0,-11 L0,-1 M0,-9 L-4,-3 M0,-9 L4,-3"/></g>
+            <g transform="translate(520,430) rotate(-60)"><circle cx="0" cy="-14" r="2.4" fill="#4a463e" stroke="none"/><path d="M0,-11 L0,-1 M0,-9 L-4,-3 M0,-9 L4,-3"/></g>
+            <g transform="translate(600,442) rotate(25)"><circle cx="0" cy="-14" r="2.4" fill="#4a463e" stroke="none"/><path d="M0,-11 L0,-1 M0,-9 L-4,-3 M0,-9 L4,-3"/></g>
+            <g transform="translate(680,428) rotate(-15)"><circle cx="0" cy="-14" r="2.4" fill="#4a463e" stroke="none"/><path d="M0,-11 L0,-1 M0,-9 L-4,-3 M0,-9 L4,-3"/></g>
+          </g>
+          <g fill="#4a463e">
+            <circle cx="150" cy="380" r="1.5" opacity=".5"/><circle cx="250" cy="350" r="1.2" opacity=".4"/>
+            <circle cx="560" cy="370" r="1.5" opacity=".5"/><circle cx="650" cy="390" r="1.2" opacity=".4"/>
+            <circle cx="340" cy="330" r="1.3" opacity=".45"/><circle cx="470" cy="340" r="1.3" opacity=".45"/>
+          </g>
+          <text x="500" y="70" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="15" fill="#5a544a">CRANE UP 急拉升镜</text>
+          <path d="M480,90 L480,140" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <path d="M480,90 l-5,10 M480,90 l5,10" stroke="#6f6a5e" stroke-width="2"/>
+          <use href="#corners"/>
+          <g class="guides">
+            <use href="#thirds"/>
+            <path d="M400,0 V450" stroke="#6f6a5e" stroke-width="1.5" stroke-dasharray="6 6"/>
+            <text x="420" y="300" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="14" fill="#5a544a">对称回归 · 随后 2s 全无声</text>
+          </g>
+        </svg>
+        <figcaption><b>画面描述</b>　青铜古棺坠入祭坛，光柱冲天而起，冲击波以祭坛为圆心荡开。
+          所有人呈放射状被掀翻。轰响之后，是两秒彻底的无声——随后黑场。</figcaption>
+      </figure>
+      <aside class="meta">
+        <div class="row"><span class="k">机位</span><span>俯瞰 30° → 升镜远离</span></div>
+        <div class="row"><span class="k">运镜</span><span>急拉 + 摇臂上升，收尾于「神视角」</span></div>
+        <div class="row"><span class="k">声音</span><span>青铜撞击的轰响 → 瞬间全无声，留白 2s；黑场后字幕起</span></div>
+        <div class="row"><span class="k">转场</span><span>淡出至黑。序章完，正篇自火星开端</span></div>
+        <div class="radar">
+          <div class="rlabel">调度雷达 · BLOCKING MAP（俯视）</div>
+          <svg class="board radar-svg" viewBox="0 0 320 300" role="img" aria-label="镜10 调度雷达">
+            <rect width="320" height="300" fill="#f2ecdd"/><rect width="320" height="300" filter="url(#paperNoise)"/>
+            <text x="12" y="20" font-family="Consolas,monospace" font-size="9" fill="#7a7362" letter-spacing="1.5">TOP VIEW · SC-02 / SHOT 10</text>
+            <text x="12" y="33" font-family="Consolas,monospace" font-size="9" fill="#7a7362" letter-spacing="1.5">FOV 60° · 俯瞰 30° → 升镜</text>
+            <g stroke="#8a8378" stroke-width="1" stroke-dasharray="3 5" fill="none">
+              <circle cx="160" cy="150" r="36"/><circle cx="160" cy="150" r="72"/><circle cx="160" cy="150" r="108"/>
+            </g>
+            <g font-family="Consolas,monospace" font-size="9" fill="#8a8378">
+              <text x="199" y="146">3m</text><text x="235" y="146">6m</text><text x="271" y="146">10m</text>
+            </g>
+            <path d="M160,262 L85,132 A150,150 0 0 0 235,132 Z" fill="#4a463e" opacity=".07" stroke="#4a463e" stroke-width="1" stroke-dasharray="4 4"/>
+            <rect x="154" y="144" width="12" height="12" fill="none" stroke="#2e2a24" stroke-width="2"/>
+            <text x="112" y="154" text-anchor="end" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#2e2a24">祭坛</text>
+            <g stroke="#2e2a24" stroke-width="1.2">
+              <path d="M160,106 L160,95 M203,124 L211,116 M210,180 L218,188 M160,200 L160,211 M112,178 L104,186 M114,122 L106,114"/>
+            </g>
+            <g fill="#2e2a24">
+              <circle cx="160" cy="106" r="4.5"/><circle cx="203" cy="124" r="4.5"/><circle cx="210" cy="180" r="4.5"/>
+              <circle cx="160" cy="200" r="4.5"/><circle cx="112" cy="178" r="4.5"/><circle cx="114" cy="122" r="4.5"/>
+            </g>
+            <g font-family="Consolas,monospace" font-size="10" fill="#2e2a24">
+              <text x="166" y="100">A</text><text x="212" y="120">B</text><text x="219" y="184">C</text>
+              <text x="166" y="212">D</text><text x="98" y="184">E</text><text x="99" y="118">F</text>
+            </g>
+            <text x="160" y="84" text-anchor="middle" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#5a544a">冲击波 · 放射状掀翻</text>
+            <path d="M160,250 l-9,15 h18 Z" fill="#2e2a24"/>
+            <text x="196" y="262" font-family="Kaiti SC,STKaiti,KaiTi,cursive" font-size="12" fill="#5a544a">升镜 ↑</text>
+            <text x="160" y="296" text-anchor="middle" font-family="Consolas,monospace" font-size="9" fill="#7a7362">CAM · A–F=同学 · 环视冲击波</text>
+          </svg>
+        </div>
+        <div class="note">光柱居中，人群放射状分布；对称回归之后，以「无声」收束全章。</div>
+      </aside>
+    </div>
+  </article>
+</section>
+
+<!-- ================= 构图语言 ================= -->
+<section id="grammar">
+  <div class="sec-title">
+    <span class="no">PART 05</span><h2>本片的构图语言</h2><span class="en">VISUAL GRAMMAR</span>
+  </div>
+  <div class="grammar">
+    <div class="g-card">
+      <svg viewBox="0 0 200 66"><rect width="200" height="66" fill="#f2ecdd"/><rect width="200" height="66" filter="url(#paperNoise)"/><circle cx="42" cy="20" r="4" fill="#b8b2a4"/></svg>
+      <h5><span>01</span>负空间优先</h5>
+      <p>深空段焦点占比 &lt; 5%。浩瀚即压迫——「空」是最贵的画面元素。</p>
+    </div>
+    <div class="g-card">
+      <svg viewBox="0 0 200 66"><rect width="200" height="66" fill="#f2ecdd"/><rect width="200" height="66" filter="url(#paperNoise)"/>
+        <g stroke="#4a463e" stroke-width="1.5"><path d="M10,10 L150,34 M10,56 L150,34 M10,33 L150,34"/></g>
+        <circle cx="150" cy="34" r="5" fill="none" stroke="#6f6a5e" stroke-width="1.5"/></svg>
+      <h5><span>02</span>引导线归一</h5>
+      <p>龙身、山脊、石阶、光柱——每一根线条都必须指向叙事焦点。</p>
+    </div>
+    <div class="g-card">
+      <svg viewBox="0 0 200 66"><rect width="200" height="66" fill="#f2ecdd"/><rect width="200" height="66" filter="url(#paperNoise)"/>
+        <path d="M0,44 L60,36 L120,42 L200,34 L200,66 L0,66 Z" fill="#4a463e" opacity=".12"/>
+        <path d="M0,52 L80,46 L160,54 L200,48 L200,66 L0,66 Z" fill="#4a463e" opacity=".22"/>
+        <path d="M0,60 L100,54 L200,62 L200,66 L0,66 Z" fill="#4a463e" opacity=".4"/></svg>
+      <h5><span>03</span>前中后景三层</h5>
+      <p>前景遮挡、中景叙事、远景定调。三层各有信息，画面才有纵深。</p>
+    </div>
+    <div class="g-card">
+      <svg viewBox="0 0 200 66"><rect width="200" height="66" fill="#f2ecdd"/><rect width="200" height="66" filter="url(#paperNoise)"/>
+        <g stroke="#6f6a5e" stroke-width=".8" opacity=".5" stroke-dasharray="3 4">
+          <path d="M66.7,0 V66 M133.3,0 V66 M0,22 H200 M0,44 H200"/></g>
+        <circle cx="66.7" cy="22" r="6" fill="none" stroke="#4a463e" stroke-width="2"/></svg>
+      <h5><span>04</span>焦点的克制</h5>
+      <p>单镜焦点唯一；全片色彩焦点只给五色石与龙目金光。</p>
+    </div>
+    <div class="g-card">
+      <svg viewBox="0 0 200 66"><rect width="200" height="66" fill="#f2ecdd"/><rect width="200" height="66" filter="url(#paperNoise)"/>
+        <g stroke="#6f6a5e" stroke-width=".8" opacity=".5" stroke-dasharray="3 4">
+          <path d="M66.7,0 V66 M133.3,0 V66 M0,22 H200 M0,44 H200"/></g>
+        <path d="M100,10 V56 M70,33 H130" stroke="#6f6a5e" stroke-width="1.5"/>
+        <circle cx="100" cy="33" r="12" fill="none" stroke="#6f6a5e" stroke-width="1.5"/></svg>
+      <h5><span>05</span>规则是为了打破</h5>
+      <p>镜 09 正中瞳孔构图：当三分法被放弃，观众便知道「这一刻不同」。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>《遮天》序章「九龙拉棺」 · 分镜设计稿 v1.0</span>
+  <span>10 SHOTS / 2 SCENES / 01'23" · 16:9 · 2026-09-14</span>
+  <span>悬停单卡看构图线 · 点击画面可放大 · 支持打印</span>
+</footer>
+
+</div>
+
+<div id="lb"></div>
+
+<script>
+  function toggleGuides(btn){
+    document.body.classList.toggle('show-guides');
+    var on = document.body.classList.contains('show-guides');
+    btn.textContent = on ? '隐藏构图线' : '显示构图线';
+  }
+  var lb = document.getElementById('lb');
+  function zoom(fig){
+    var svg = fig.querySelector('svg').cloneNode(true);
+    lb.innerHTML = '';
+    lb.appendChild(svg);
+    lb.classList.add('on');
+  }
+  lb.addEventListener('click', function(){ lb.classList.remove('on'); lb.innerHTML=''; });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ lb.classList.remove('on'); lb.innerHTML=''; }
+  });
+</script>
+</body>
+</html>
