@@ -7,7 +7,7 @@
 - [成品参考图](../assets/scene-blocking-toolkit/模板图_泰山玉皇顶_v1.png)
 - [原 README](../assets/scene-blocking-toolkit/README.md)
 
-生成前查看参考图并阅读 JSON/README。默认复用它的平面网格、人物方向箭头、机位视场扇形、道具、虚线动线及右侧信息表；调度图保留功能性色彩，主分镜图继续使用黑白铅笔风格。
+生成前查看参考图并阅读 JSON/README。默认复用它的平面网格、人物方向箭头、机位视场扇形、道具、虚线动线及右侧信息表；调度图保留功能性色彩，主分镜图使用作者已经确认的项目画风，两者无需视觉同风格。
 
 运行入口优先使用 [轻量适配器](../scripts/render_blocking.py)，仍调用原渲染器：
 
